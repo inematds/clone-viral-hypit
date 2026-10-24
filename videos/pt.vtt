@@ -1,0 +1,641 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.520
+Um clipe curto e duas fotos do
+
+2
+00:00:01.520 --> 00:00:02.000
+seu rosto.
+
+3
+00:00:02.000 --> 00:00:03.700
+Com isso, o Claude refaz a cena
+
+4
+00:00:03.700 --> 00:00:05.260
+com você no lugar do apresentador,
+
+5
+00:00:05.260 --> 00:00:06.860
+faz a versão em outra língua ou
+
+6
+00:00:06.860 --> 00:00:08.940
+troca a pessoa por sete personagens diferentes.
+
+7
+00:00:08.940 --> 00:00:10.500
+Sem câmera e sem estúdio.
+
+8
+00:00:10.500 --> 00:00:12.120
+A ferramenta se chama Hypit:
+
+9
+00:00:12.120 --> 00:00:13.340
+é aberta e grátis,
+
+10
+00:00:13.340 --> 00:00:14.640
+e você paga só os modelos de
+
+11
+00:00:14.640 --> 00:00:15.840
+IA.
+
+12
+00:00:15.880 --> 00:00:18.000
+Neste vídeo eu mostro os três passos,
+
+13
+00:00:18.000 --> 00:00:19.400
+quanto custa cada versão,
+
+14
+00:00:19.400 --> 00:00:20.020
+e no fim,
+
+15
+00:00:20.020 --> 00:00:21.560
+os três erros que fazem o resultado
+
+16
+00:00:21.560 --> 00:00:22.360
+parecer falso.
+
+17
+00:00:22.360 --> 00:00:22.880
+Por quê?
+
+18
+00:00:22.880 --> 00:00:24.520
+Porque a parte difícil de um anúncio
+
+19
+00:00:24.520 --> 00:00:25.340
+não é fazer,
+
+20
+00:00:25.340 --> 00:00:27.120
+é saber qual versão vai funcionar.
+
+21
+00:00:27.120 --> 00:00:28.120
+Com um clipe só,
+
+22
+00:00:28.120 --> 00:00:30.000
+você faz cinco ou dez versões,
+
+23
+00:00:30.000 --> 00:00:31.960
+testa todas com pouco dinheiro e só
+
+24
+00:00:31.960 --> 00:00:33.840
+paga uma gravação de verdade quando já
+
+25
+00:00:33.840 --> 00:00:34.780
+conhece a vencedora.
+
+26
+00:00:34.780 --> 00:00:36.600
+E o rosto certo muda conforme o
+
+27
+00:00:36.600 --> 00:00:38.600
+mercado: o mesmo clipe pode funcionar nos
+
+28
+00:00:38.600 --> 00:00:40.380
+Estados Unidos e não funcionar na Coreia
+
+29
+00:00:40.380 --> 00:00:41.120
+ou no Brasil.
+
+30
+00:00:41.120 --> 00:00:42.560
+E quando o anúncio cansa,
+
+31
+00:00:42.560 --> 00:00:44.220
+você troca o rosto ou a língua
+
+32
+00:00:44.220 --> 00:00:45.640
+em vez de começar do zero.
+
+33
+00:00:45.640 --> 00:00:47.760
+O Hypit roda dentro do Claude Code:
+
+34
+00:00:47.760 --> 00:00:48.620
+lê o seu vídeo,
+
+35
+00:00:48.620 --> 00:00:49.560
+planeja um novo,
+
+36
+00:00:49.560 --> 00:00:51.460
+pede aos modelos de IA
+
+37
+00:00:51.460 --> 00:00:52.680
+as pessoas e as cenas,
+
+38
+00:00:52.680 --> 00:00:54.400
+põe as legendas e monta o vídeo
+
+39
+00:00:54.400 --> 00:00:55.520
+no seu próprio computador.
+
+40
+00:00:55.520 --> 00:00:57.120
+E mostra o preço antes de gastar
+
+41
+00:00:57.120 --> 00:00:57.760
+qualquer centavo.
+
+42
+00:00:57.760 --> 00:00:59.200
+Os modelos rodam no fal,
+
+43
+00:00:59.200 --> 00:01:00.740
+um serviço onde você paga por imagem
+
+44
+00:01:00.740 --> 00:01:01.680
+e por clipe.
+
+45
+00:01:01.680 --> 00:01:03.240
+E uma regra antes de começar:
+
+46
+00:01:03.240 --> 00:01:04.860
+use o seu rosto ou um rosto
+
+47
+00:01:04.860 --> 00:01:06.640
+que você tem permissão para usar.
+
+48
+00:01:06.640 --> 00:01:08.180
+Passo um, a instalação.
+
+49
+00:01:08.180 --> 00:01:09.840
+Você precisa de quatro coisas:
+
+50
+00:01:09.840 --> 00:01:10.680
+o Claude Code,
+
+51
+00:01:10.680 --> 00:01:12.340
+uma conta no fal com alguns dólares
+
+52
+00:01:12.340 --> 00:01:14.260
+de crédito, um clipe curto que seja
+
+53
+00:01:14.260 --> 00:01:16.160
+seu e duas fotos nítidas do seu
+
+54
+00:01:16.160 --> 00:01:16.580
+rosto.
+
+55
+00:01:16.580 --> 00:01:18.180
+Aí você não digita nenhum comando.
+
+56
+00:01:18.180 --> 00:01:20.500
+Manda uma mensagem pedindo para instalar o
+
+57
+00:01:20.500 --> 00:01:22.660
+Hypit só neste projeto e ligar o
+
+58
+00:01:22.660 --> 00:01:24.520
+fal, lendo a chave do ambiente do
+
+59
+00:01:24.520 --> 00:01:25.020
+computador.
+
+60
+00:01:25.020 --> 00:01:26.860
+O Claude lê a documentação,
+
+61
+00:01:26.860 --> 00:01:29.380
+instala tudo, mantém a chave fora dos
+
+62
+00:01:29.380 --> 00:01:31.260
+arquivos e até corrige o próprio erro
+
+63
+00:01:31.260 --> 00:01:31.920
+no caminho.
+
+64
+00:01:31.920 --> 00:01:33.380
+Uns seis minutos.
+
+65
+00:01:33.380 --> 00:01:35.100
+E nunca cole a sua chave no
+
+66
+00:01:35.100 --> 00:01:35.500
+chat.
+
+67
+00:01:35.500 --> 00:01:37.680
+Passo dois, o vídeo e o rosto.
+
+68
+00:01:37.680 --> 00:01:39.200
+O Hypit pega o primeiro e o
+
+69
+00:01:39.200 --> 00:01:40.740
+último quadro do clipe e coloca o
+
+70
+00:01:40.740 --> 00:01:41.840
+seu rosto nos dois:
+
+71
+00:01:41.840 --> 00:01:43.580
+mesma pose, mesma sala,
+
+72
+00:01:43.580 --> 00:01:44.400
+mesma luz.
+
+73
+00:01:44.400 --> 00:01:46.280
+Depois um modelo de vídeo preenche os
+
+74
+00:01:46.280 --> 00:01:48.180
+oito segundos entre esses dois quadros.
+
+75
+00:01:48.180 --> 00:01:50.160
+O truque é dividir em duas rodadas:
+
+76
+00:01:50.160 --> 00:01:51.100
+primeiro as imagens,
+
+77
+00:01:51.100 --> 00:01:52.680
+você confere, e só depois paga o
+
+78
+00:01:52.680 --> 00:01:52.880
+clipe.
+
+79
+00:01:52.880 --> 00:01:55.000
+Essa primeira versão custa por volta de
+
+80
+00:01:55.000 --> 00:01:56.020
+setenta centavos de dólar.
+
+81
+00:01:56.020 --> 00:01:56.840
+Não é ruim,
+
+82
+00:01:56.840 --> 00:01:58.560
+mas o rosto fica um pouco diferente,
+
+83
+00:01:58.560 --> 00:01:59.800
+e a placa da loja vira um
+
+84
+00:01:59.800 --> 00:02:01.300
+monte de letras sem sentido.
+
+85
+00:02:01.300 --> 00:02:03.220
+Passo três: antes de corrigir,
+
+86
+00:02:03.220 --> 00:02:04.400
+confira três coisas.
+
+87
+00:02:04.400 --> 00:02:06.140
+O rosto: parece mesmo você?
+
+88
+00:02:06.140 --> 00:02:08.280
+As mãos: mexem de um jeito natural?
+
+89
+00:02:08.280 --> 00:02:09.640
+E qualquer texto na cena,
+
+90
+00:02:09.640 --> 00:02:12.360
+porque a IA transforma palavra em bobagem:
+
+91
+00:02:12.360 --> 00:02:13.600
+cereal virou cenlil.
+
+92
+00:02:13.600 --> 00:02:15.880
+Para corrigir, troque para modelos premium:
+
+93
+00:02:15.880 --> 00:02:18.900
+o GPT Image dois ponto cinco na
+
+94
+00:02:18.900 --> 00:02:20.747
+qualidade máxima, um quadro do meio para
+
+95
+00:02:20.747 --> 00:02:22.040
+o movimento não sair do trilho,
+
+96
+00:02:22.040 --> 00:02:23.440
+e vídeo em mil e oitenta.
+
+97
+00:02:23.440 --> 00:02:24.940
+Fica por volta de dois dólares.
+
+98
+00:02:24.940 --> 00:02:26.220
+Depois vêm as versões:
+
+99
+00:02:26.220 --> 00:02:27.140
+traduz a fala,
+
+100
+00:02:27.140 --> 00:02:28.160
+faz uma voz nova,
+
+101
+00:02:28.160 --> 00:02:29.680
+confere com o Whisper o que a
+
+102
+00:02:29.680 --> 00:02:31.680
+voz disse, sincroniza os lábios e põe
+
+103
+00:02:31.680 --> 00:02:32.260
+legenda.
+
+104
+00:02:32.260 --> 00:02:33.200
+Outros dois dólares,
+
+105
+00:02:33.200 --> 00:02:34.040
+mais ou menos.
+
+106
+00:02:34.040 --> 00:02:35.360
+Agora a parte divertida.
+
+107
+00:02:35.360 --> 00:02:37.280
+Um clipe de U G C,
+
+108
+00:02:37.280 --> 00:02:39.080
+uma lista de personagens num arquivo,
+
+109
+00:02:39.080 --> 00:02:40.080
+e uma mensagem só.
+
+110
+00:02:40.080 --> 00:02:41.080
+Ela diz o clipe,
+
+111
+00:02:41.080 --> 00:02:42.440
+os modelos e a resolução,
+
+112
+00:02:42.440 --> 00:02:44.720
+e termina com a frase mais importante:
+
+113
+00:02:44.720 --> 00:02:46.580
+me mostre o plano e o preço,
+
+114
+00:02:46.580 --> 00:02:47.640
+e não construa nada.
+
+115
+00:02:47.640 --> 00:02:49.160
+O Claude para e pergunta antes de
+
+116
+00:02:49.160 --> 00:02:49.620
+gastar.
+
+117
+00:02:49.620 --> 00:02:51.160
+Ele confere cada rodada,
+
+118
+00:02:51.160 --> 00:02:52.800
+aponta a foto que o filtro de
+
+119
+00:02:52.800 --> 00:02:54.700
+segurança bloqueou, e quando o primeiro preço
+
+120
+00:02:54.700 --> 00:02:55.440
+é um chute,
+
+121
+00:02:55.440 --> 00:02:57.560
+ele avisa e vai conferir a tabela.
+
+122
+00:02:57.560 --> 00:02:59.480
+O Recast cobra quarenta e cinco centavos
+
+123
+00:02:59.480 --> 00:03:00.840
+por segundo em mil e oitenta:
+
+124
+00:03:00.840 --> 00:03:02.690
+um clipe de oito segundos sai por
+
+125
+00:03:02.690 --> 00:03:03.980
+três dólares e sessenta,
+
+126
+00:03:03.980 --> 00:03:05.335
+e um lote de oito por uns
+
+127
+00:03:05.335 --> 00:03:06.360
+vinte e nove dólares.
+
+128
+00:03:06.360 --> 00:03:07.860
+Na tabela do Genjutsu,
+
+129
+00:03:07.860 --> 00:03:09.220
+o mesmo lote passa de cento e
+
+130
+00:03:09.220 --> 00:03:10.140
+quatro dólares.
+
+131
+00:03:10.140 --> 00:03:11.820
+Os três erros que deixam tudo com
+
+132
+00:03:11.820 --> 00:03:12.750
+cara de falso.
+
+133
+00:03:12.750 --> 00:03:14.780
+Um: clipe de referência longo demais,
+
+134
+00:03:14.780 --> 00:03:16.430
+fique abaixo de dez segundos.
+
+135
+00:03:16.430 --> 00:03:18.620
+Dois: foto do rosto com óculos escuros
+
+136
+00:03:18.620 --> 00:03:20.040
+ou com a mão na boca.
+
+137
+00:03:20.040 --> 00:03:22.260
+Três: construir o vídeo antes de conferir
+
+138
+00:03:22.260 --> 00:03:23.080
+as imagens.
+
+139
+00:03:23.080 --> 00:03:24.900
+E como usar as sete versões?
+
+140
+00:03:24.900 --> 00:03:26.560
+Rode todas como um teste só,
+
+141
+00:03:26.560 --> 00:03:28.120
+com a mesma verba pequena para cada
+
+142
+00:03:28.120 --> 00:03:28.560
+uma.
+
+143
+00:03:28.560 --> 00:03:29.880
+Depois de alguns dias,
+
+144
+00:03:29.880 --> 00:03:31.320
+fique com as duas que o público
+
+145
+00:03:31.320 --> 00:03:33.240
+assiste por mais tempo e faça versões
+
+146
+00:03:33.240 --> 00:03:34.220
+novas da vencedora:
+
+147
+00:03:34.220 --> 00:03:36.960
+rosto novo, cenário novo ou língua nova.
+
+148
+00:03:36.960 --> 00:03:37.860
+Não é mágica.
+
+149
+00:03:37.860 --> 00:03:39.880
+Rosto escorrega, mão fica dura,
+
+150
+00:03:39.880 --> 00:03:41.720
+e você ainda confere cada quadro.
+
+151
+00:03:41.720 --> 00:03:43.180
+Mas, depois de montado,
+
+152
+00:03:43.180 --> 00:03:44.900
+um rosto novo ou uma língua nova
+
+153
+00:03:44.900 --> 00:03:47.120
+leva minutos, não um dia de gravação.
+
+154
+00:03:47.120 --> 00:03:48.660
+Montei um kit em português com as
+
+155
+00:03:48.660 --> 00:03:50.380
+mensagens prontas para copiar no Claude,
+
+156
+00:03:50.380 --> 00:03:51.600
+os modelos de arquivo,
+
+157
+00:03:51.600 --> 00:03:53.800
+os checklists e a tabela de preços,.
+
+158
+00:03:53.800 --> 00:03:55.940
+Tudo está no inema ponto club.
+
+159
+00:03:55.940 --> 00:03:57.220
+Me conta nos comentários:
+
+160
+00:03:57.220 --> 00:03:59.020
+que vídeo você refaria primeiro?
