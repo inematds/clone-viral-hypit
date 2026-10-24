@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clone viral com o seu rosto — Hypit no Claude Code, modelos no fal</title>
+<meta name="description" content="Kit do INEMA em português para refazer um clipe curto com o seu próprio rosto usando o Hypit dentro do Claude Code, com os modelos rodando no fal: mensagens prontas, modelos de arquivo, checklists e preços.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/clone-viral-hypit/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/clone-viral-hypit/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/clone-viral-hypit/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#FACC15; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    --bad:#F0918A; --tint:rgba(250,204,21,.12);
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#a16207; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    --bad:#A83426; --tint:#FEF9C3;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  body.light pre .k{color:#f0c070}
+  body.light .btn{background:#FACC15}
+  body.light .step .b{background:#FACC15}
+  body.light a{color:#854d0e;text-decoration:underline;text-decoration-color:#FACC15;text-decoration-thickness:3px}
+  body.light nav a,body.light .btn,body.light .lang a{text-decoration:none}
+  body.light nav .brand{color:var(--txt)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  body.light nav{background:rgba(246,247,249,.85)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:var(--tint)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  body.light .btn.ghost{background:transparent}
+  @media(max-width:900px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(250,204,21,.16),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.95rem;margin:0}
+  .card ul{color:var(--mut);font-size:.95rem;margin:.4em 0 0;padding-left:1.2em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0;white-space:pre-wrap;overflow-wrap:anywhere}
+  pre .c{color:#8a8a98} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:30px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .step .who{font-family:Sora;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-left:.5em;font-weight:600}
+  .callout{border:1px solid var(--line);border-left:4px solid var(--amb);background:var(--tint);border-radius:12px;padding:16px 18px;margin:18px 0}
+  .callout strong{color:var(--txt)}
+  .callout.etica{border-left-color:var(--bad)}
+  .tbl{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px}
+  .tbl th,.tbl td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  .tbl th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .tblwrap{overflow-x:auto}
+  .kit{font-family:"JetBrains Mono",monospace;font-size:.86rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🎬</span> clone-viral-hypit</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">O que é</a>
+    <a class="sec" href="#fluxo">Como funciona</a>
+    <a class="sec" href="#guia">Guia de uso</a>
+    <a class="sec" href="#precos">Preços</a>
+    <a class="sec" href="#etica">Ética</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/clone-viral-hypit" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Kit INEMA · Hypit + Claude Code + fal</span>
+      <h1>Clone um vídeo viral com o seu <span class="amb">rosto</span></h1>
+      <p class="lead">Um clipe seu e duas fotos viram o mesmo vídeo com você, em outra língua ou com outros personagens. O Claude mostra o plano e o preço antes de gastar.</p>
+      <div class="cta">
+        <a class="btn" href="#guia">Começar o guia</a>
+        <a class="btn ghost" href="https://github.com/inematds/clone-viral-hypit" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Banner: Clone viral com o seu rosto — Hypit no Claude Code, modelos no fal" width="1400" height="788"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>Este é um kit gratuito do INEMA, em português, com mensagens prontas para colar no Claude Code, modelos de arquivo, checklists e uma tabela de preços. Ele ensina a usar o Hypit, uma ferramenta aberta de vídeo, para refazer um clipe curto com o seu próprio rosto, fazer a versão em outra língua ou trocar a pessoa por personagens fictícios. Serve para quem faz marketing ou cria conteúdo e quer testar várias versões de um anúncio sem gravar de novo. Você precisa do Claude Code, de uma conta no fal com alguns dólares de crédito, de um clipe seu e de duas fotos do seu rosto.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Três peças, um kit em português</h2>
+  <p class="sub">O Hypit planeja e monta o vídeo no seu computador. O fal roda os modelos de imagem e de vídeo. O Claude Code conversa com você e escreve os arquivos. Este kit junta o que você precisa dizer a ele.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Banner com as partes do kit: instalação, 4 mensagens, modelos, checklists, preços e teste de anúncio" loading="lazy" width="1400" height="788" style="width:100%;height:auto;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>🧠 Você pede em texto</h3><p>Quatro mensagens prontas, em português, para colar no Claude Code. Nenhum comando para digitar.</p></div>
+    <div class="card"><h3>💵 Preço antes de gastar</h3><p>Toda mensagem termina com "Me mostre o plano e o preço e não construa nada." O Claude orça e para.</p></div>
+    <div class="card"><h3>🧩 Uma base, muitas versões</h3><p>Depois da primeira, um rosto novo ou uma língua nova é mais uma mensagem, não um dia de gravação.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Os 3 passos</h2>
+  <p class="sub">Instalar, refazer com o seu rosto, conferir e fazer versões. Em cada um, o Claude mostra o plano e o preço antes.</p>
+  <div class="flow">
+    <span>1 · Instalar Hypit + fal</span><span class="arr">→</span>
+    <span>2 · Refazer com o seu rosto</span><span class="arr">→</span>
+    <span>3 · Conferir, corrigir e fazer versões</span>
+  </div>
+  <div class="grid g3" style="margin-top:22px">
+    <div class="card"><h3>1. Instalar</h3><p>Uma mensagem instala o Hypit só no projeto, liga o fal lendo a FAL_KEY do ambiente e aponta o Chrome que você já tem. Uns 6 minutos.</p></div>
+    <div class="card"><h3>2. Refazer</h3><p>O Hypit pega o primeiro e o último quadro do clipe, coloca o seu rosto nos dois e gera os 8 segundos entre eles. Imagens primeiro, vídeo depois.</p></div>
+    <div class="card"><h3>3. Conferir e versionar</h3><p>Rosto, mãos e texto na cena. Corrija com modelos premium. Depois: outra língua ou personagens fictícios no mesmo clipe.</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que você precisa</h2>
+  <p class="sub">Quatro coisas, mais o Chrome. O Claude confere o resto (como o Node.js 22.15+) e avisa se faltar.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Claude Code</h3><p>Roda no seu plano do Claude. Deixe ele pedir permissão antes de rodar comandos; nada de modo automático para trabalho pago.</p></div>
+    <div class="card"><h3>Conta no fal com crédito</h3><p>Alguns dólares bastam para começar. Crie a API key no painel do <a href="https://fal.ai" target="_blank" rel="noopener">fal.ai</a> e guarde no perfil do terminal:</p>
+<pre><span class="c"># no fim do ~/.zshrc (Mac) ou ~/.bashrc (Linux)</span>
+<span class="k">export</span> FAL_KEY=<span class="s">"cole-aqui-a-sua-chave"</span>
+
+<span class="c"># confira sem mostrar o valor</span>
+[ -n "$FAL_KEY" ] && echo "FAL_KEY carregada"</pre>
+      <p><strong>Nunca cole a chave no chat.</strong> O Hypit lê do seu computador.</p></div>
+    <div class="card"><h3>Um clipe seu, curto</h3><p>Menos de 10 segundos de preferência. Seu, ou com direito de refazer.</p></div>
+    <div class="card"><h3>Duas fotos nítidas do seu rosto</h3><p>Uma de frente e uma levemente de lado. Sem óculos escuros, sem mão na boca, com luz boa.</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Do clipe às versões</h2>
+  <p class="sub">Cole cada mensagem no Claude Code, na pasta do projeto. As versões completas, com explicação, estão em <a href="https://github.com/inematds/clone-viral-hypit/tree/main/kit" target="_blank" rel="noopener">kit/</a>.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Organize a pasta <span class="who">🧠 você</span></h3>
+    <p>Uma pasta vazia para o projeto, com o clipe e as fotos dentro de <code>references/</code>.</p>
+<pre>meu-clone/
+└── references/
+    ├── meu-clipe.mp4
+    ├── rosto-1.jpg
+    └── rosto-2.jpg</pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Instale o Hypit e ligue o fal <span class="who">🧠 você · ⚙️ Hypit</span></h3>
+    <p>Abra o Claude Code nessa pasta e cole a mensagem de instalação. Pegadinhas comuns: o pacote é <code>@hypit/hypit</code>; a skill vai só no projeto (<code>npx skills add hypit-ai/hypit</code>, sem <code>-g</code>); <code>npm pkg set</code> precisa de <code>--json</code> para gravar <code>true</code> como booleano.</p>
+<pre>Instale o Hypit nesta pasta. Instale a skill do Hypit de github.com/hypit-ai/hypit só para este projeto, e o comando hypit pelo npm. Depois ligue o fal para as imagens e os clipes rodarem no fal: o Hypit não vem com o fal, então escreva um pequeno pacote Provider do projeto em packages/provider-fal que leia a minha FAL_KEY do ambiente e nunca grave a chave em arquivo. A FAL_KEY já está definida. Aponte o renderizador de páginas do Hypit para o Chrome que eu já tenho instalado. Me mostre o plano primeiro e depois confira se tudo funciona.</pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Refaça o clipe com o seu rosto <span class="who">🧠 você · 🤖 fal</span></h3>
+    <p>Primeiro e último quadro com o seu rosto, depois o vídeo entre eles. Em duas rodadas, para conferir as imagens antes de pagar o vídeo. Cerca de US$ 0,71 pela tabela de 21/10/2026.</p>
+<pre><span class="k">/hypit</span> Refaça os primeiros 8 segundos de references/meu-clipe.mp4 com o meu rosto, usando references/rosto-1.jpg e references/rosto-2.jpg. Pegue o primeiro e o último quadro do clipe e coloque o meu rosto nos dois, mantendo a mesma pose, a mesma sala e a mesma luz. Depois faça o clipe de 8 segundos entre esses dois quadros. Divida em duas rodadas, primeiro as imagens e depois o clipe, para eu conferir as imagens antes de pagar o vídeo. <span class="s">Me mostre o plano e o preço e não construa nada.</span></pre>
+  </div></div>
+
+  <div class="callout"><strong>Por que a última frase é a mais importante.</strong> "Me mostre o plano e o preço e não construa nada." transforma o pedido em orçamento: o Claude lê, planeja, calcula o custo no fal e para. Você confere se ele entendeu o clipe, se os modelos e a resolução são os pedidos e se o preço cabe. Só então responde "pode construir". Se o preço vier como estimativa, peça para ele conferir nas páginas do fal.</div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Confira 3 coisas <span class="who">🧠 você</span></h3>
+    <p><strong>O rosto</strong> (olhos, nariz, sorriso), <strong>as mãos</strong> (conte os dedos nos movimentos rápidos) e <strong>qualquer texto na cena</strong> — uma placa "CEREAL" pode virar "CENLIL". Em versões com personagens, confira também cabelo e dentes.</p>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Corrija com modelos premium <span class="who">🧠 você · 🤖 fal</span></h3>
+    <p>Modelo de imagem mais forte, um quadro do meio e vídeo em 1080p. Mesmos prompts, só o modelo muda. Cerca de US$ 2.</p>
+<pre><span class="k">/hypit</span> O rosto e o texto da cena estão com cara de falso. Refaça com modelos premium: GPT Image 2.5 na qualidade máxima para três quadros (início, meio e fim), para o movimento não sair do trilho, e MiniMax H3 Max em 1080p para dois clipes de uns 4 segundos cada. Mantenha todos os prompts iguais, mudando só o modelo. <span class="s">Me mostre o plano e o preço e não construa nada.</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Faça a versão em outra língua <span class="who">🧠 você · 🤖 fal</span></h3>
+    <p>Traduz e corta a fala, voz nova, conferência com o Whisper, lábios sincronizados e legenda. Se a voz errar um número ou palavra rara, escreva do jeito que se fala e confira de novo. Cerca de US$ 2.</p>
+<pre><span class="k">/hypit</span> Faça uma versão em japonês do meu clipe premium. Traduza a fala e corte para caber em 8 segundos, faça uma voz nova, rode uma conferência de fala, sincronize os lábios com a voz nova e coloque legendas. <span class="s">Me mostre o plano e o preço e não construa nada.</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">7</div><div>
+    <h3>Um clipe, várias pessoas fictícias <span class="who">🧠 você · 🤖 fal</span></h3>
+    <p>Com o <code>characters.json</code> do kit (personagens inventados). Se o filtro de segurança bloquear uma foto (<code>content_policy_violation</code>), suavize a descrição daquele personagem e rode só ela de novo.</p>
+<pre><span class="k">/hypit</span> Quero um clipe de UGC de 8 segundos refeito com personagens diferentes, uma versão por personagem do characters.json. Cada personagem ganha uma foto de identidade feita pelo GPT Image 2.5, e depois o MiniMax H3 Recast coloca essa pessoa no clipe em 1080p, mantendo os movimentos, a câmera e o tempo. <span class="s">Me mostre o plano e o preço total de todas as versões e não construa nada.</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">8</div><div>
+    <h3>Teste as versões num anúncio <span class="who">🧠 você</span></h3>
+    <p>Rode todas como um teste só, com a mesma verba pequena para cada uma. Depois de alguns dias, fique com as duas que o público assiste por mais tempo e faça versões novas da vencedora: rosto, cenário ou língua.</p>
+  </div></div>
+
+  <h3 style="margin:34px 0 12px">Os 3 erros que deixam tudo com cara de falso</h3>
+  <div class="grid g3">
+    <div class="card"><h3>Clipe longo demais</h3><p>Fique abaixo de 10 segundos. O Recast aceita de 5 a 30 s, mas curto acerta mais e custa menos.</p></div>
+    <div class="card"><h3>Foto ruim do rosto</h3><p>Sem óculos escuros, sem mão na boca. Uma de frente, uma de lado, luz boa.</p></div>
+    <div class="card"><h3>Vídeo antes das imagens</h3><p>Confira as imagens (centavos) antes de pagar o clipe (dólares).</p></div>
+  </div>
+</div></section>
+
+<section id="precos"><div class="wrap">
+  <span class="chip">Preços</span>
+  <h2>Quanto custa, aproximadamente</h2>
+  <p class="sub">Custos calculados pelos preços de tabela lidos em 21/10/2026. Preço muda: abra as páginas antes de gastar. O Hypit é grátis; você paga os modelos no fal.</p>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>O quê</th><th>Custo aproximado</th><th>Fonte</th></tr></thead>
+    <tbody>
+      <tr><td>Primeira versão (Seedream 5 Lite + MiniMax H3 768p)</td><td>US$ 0,71</td><td>tabela do fal</td></tr>
+      <tr><td>Versão premium (GPT Image 2.5 + H3 Max 1080p)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
+      <tr><td>Nova língua (voz, Whisper, lábios, legenda)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
+      <tr><td>MiniMax H3 Recast 1080p</td><td>US$ 0,45/s → US$ 3,60 por clipe de 8 s; lote de 8 ≈ US$ 28,80</td><td><a href="https://fal.ai/models/minimax/h3-max/recast" target="_blank" rel="noopener">fal · Recast</a></td></tr>
+      <tr><td>GPT Image 2.5 (edição)</td><td>~US$ 0,006 a 0,055 por imagem + ~US$ 0,01 por referência</td><td><a href="https://fal.ai/models/openai/gpt-image-2.5/sunburst/edit" target="_blank" rel="noopener">fal · GPT Image 2.5</a></td></tr>
+      <tr><td>Higgsfield Genjutsu 1080p (comparação)</td><td>US$ 1,632/s → US$ 13,06 por clipe; lote de 8 ≈ US$ 104,50</td><td><a href="https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/playground" target="_blank" rel="noopener">Higgsfield</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="mut" style="margin-top:14px">Recast e Genjutsu são modelos diferentes; a qualidade não foi comparada aqui, só o preço de tabela.</p>
+</div></section>
+
+<section id="etica"><div class="wrap">
+  <span class="chip">Ética e licença</span>
+  <h2>A regra antes de tudo</h2>
+  <div class="callout etica"><strong>Use só o seu rosto, ou um rosto que você tem permissão por escrito para usar. Use só clipes seus, ou clipes que você tem direito de refazer.</strong> Nada de famoso, de colega sem autorização ou de vídeo alheio. Os personagens do kit são fictícios. Se o anúncio parece depoimento, avise que é conteúdo gerado por IA.</div>
+  <div class="grid g2">
+    <div class="card"><h3>Licença do Hypit (resumo)</h3><ul>
+      <li>Uso livre no seu trabalho e no de clientes, inclusive comercial.</li>
+      <li>Sem serviço hospedado ou multi-inquilino para terceiros.</li>
+      <li>Sem vender ou empacotar o Hypit (ou derivado).</li>
+      <li>Manter o nome e o logo do Hypit.</li>
+    </ul><p style="margin-top:.6em">Leia a licença completa no <a href="https://github.com/hypit-ai/hypit" target="_blank" rel="noopener">repositório do Hypit</a>. Por isso o Hypit não vem dentro deste kit.</p></div>
+    <div class="card"><h3>Este kit</h3><p>Licença MIT: só o texto, os modelos de arquivo e os scripts do INEMA. O que você cria com o Hypit é seu; os termos dos provedores de modelo continuam valendo.</p></div>
+  </div>
+</div></section>
+
+<section id="kit"><div class="wrap">
+  <span class="chip">O kit</span>
+  <h2>O que tem no repositório</h2>
+  <p class="sub">Tudo em texto, em português. Abra pelo GitHub ou baixe o repositório.</p>
+<pre class="kit">kit/
+├── 00-COMECE-AQUI.md
+├── 01-instalacao/      o que precisa · mensagem de instalação · FAL_KEY segura
+├── 02-mensagens/       as 4 mensagens para o Claude
+├── 03-modelos/         characters.json · runtime de exemplo · 2 arquivos .svml
+├── 04-checklists/      confira antes de corrigir · 3 erros · teste com 7 versões
+└── 05-precos-e-links.md</pre>
+  <p class="mut">Vídeo explicativo do kit: <a href="../videos/">página do vídeo</a>.</p>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Hypit</div><div class="pill">Claude Code</div><div class="pill">fal</div>
+    <p style="margin-top:18px">clone-viral-hypit · kit aberto e gratuito ·
+      <a href="https://github.com/inematds/clone-viral-hypit">inematds/clone-viral-hypit</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='clone-viral-hypit-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

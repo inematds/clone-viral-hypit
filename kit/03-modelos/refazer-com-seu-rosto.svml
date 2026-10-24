@@ -1,0 +1,43 @@
+<?svml using="@hypit/markup@1"?>
+<!-- Refazer um clipe com o seu rosto (mensagem 1): 2 trabalhos de imagem + 1 trabalho de vídeo.
+     Troque as partes entre [colchetes]. Os prompts ficam em inglês: os modelos respondem melhor assim.
+     Use só o seu rosto (ou com permissão) e um clipe seu (ou com direito de refazer). -->
+<svml>
+  <import as="text" from="@hypit/text@1"/>
+  <import as="media" from="@hypit/media@1"/>
+  <import as="seedream" from="@hypit/seedream@1"/>
+  <import as="h3" from="@hypit/minimax-h3@1"/>
+
+  <!-- As 4 entradas: duas fotos do seu rosto + o primeiro e o último quadro do clipe. -->
+  <media:Image id="identity" src="../references/rosto-1.jpg"/>
+  <media:Image id="identity-side" src="../references/rosto-2.jpg"/>
+  <media:Image id="source-start" src="../references/meu-clipe-primeiro-quadro.png"/>
+  <media:Image id="source-end" src="../references/meu-clipe-ultimo-quadro.png"/>
+
+  <!-- Imagem 1: o primeiro quadro com o seu rosto. Diz o que trocar e o que manter. -->
+  <text:Value id="start-edit">
+    Edit the FIRST reference, the exact first frame of the clip. The SECOND and THIRD references are identity photos of me: copy my exact face shape, eyes, nose and smile, hair and natural skin texture. Replace ONLY [the presenter] with me, dressed in [my outfit]. Use the photos only for my face, not their background or pose. Keep the presenter's position, scale, gesture and eye contact. Keep [the room / the shop], the lighting, the lens and the framing exactly. Photorealistic video frame. No added captions or watermark.
+  </text:Value>
+  <seedream:ReferenceImage id="start" prompt={start-edit} aspect-ratio="16:9" quality="basic" output-format="jpeg" nsfw-check="true">
+    <seedream:Reference image={source-start}/>
+    <seedream:Reference image={identity}/>
+    <seedream:Reference image={identity-side}/>
+  </seedream:ReferenceImage>
+
+  <!-- Imagem 2: o último quadro com o seu rosto. -->
+  <text:Value id="end-edit">
+    Edit the FIRST reference, the exact last frame of the clip. Replace ONLY [the presenter] with me, copying my face from the SECOND and THIRD references, dressed in [my outfit]. Keep everyone and everything else unchanged: [the other people], the camera angle, the room and the lighting. Photorealistic. No added captions or watermark.
+  </text:Value>
+  <seedream:ReferenceImage id="end" prompt={end-edit} aspect-ratio="16:9" quality="basic" output-format="jpeg" nsfw-check="true">
+    <seedream:Reference image={source-end}/>
+    <seedream:Reference image={identity}/>
+    <seedream:Reference image={identity-side}/>
+  </seedream:ReferenceImage>
+
+  <!-- Vídeo: preenche os 8 segundos entre os dois quadros. Descreva o movimento por trechos de tempo.
+       Confira as duas imagens ANTES de rodar esta parte (é a parte que custa mais). -->
+  <text:Value id="motion">
+    One continuous eight-second shot, normal real-time speed, no cuts. [Describe the motion second by second: from 0 to 3 seconds …; from 3 to 5 seconds …; from 5 to 8 seconds the camera settles into the view of the last frame.] Keep my face, hair and outfit the same throughout. Natural movement and anatomy. No extra people, no morphing faces, no subtitles.
+  </text:Value>
+  <h3:FrameVideo id="remake" prompt={motion} duration="8" resolution="768P" first-frame={start.image} last-frame={end.image}/>
+</svml>

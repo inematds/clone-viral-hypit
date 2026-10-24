@@ -1,0 +1,17 @@
+{
+  "format": "hypit.runtime-local@1",
+  "dataRoot": ".hypit/runtimes/local",
+  "credentials": { "env": { "use": "@hypit/credential-store-env" } },
+  "endpoints": {
+    "fal.personal": {
+      "use": "@seu-nome/provider-fal",
+      "config": { "apiKey": { "store": "env", "key": "FAL_KEY" }, "defaultVideoResolution": "1080P" }
+    },
+    "media.local": { "use": "@hypit/media-local" },
+    "html.local": { "use": "@hypit/provider-html-local", "config": { "chromePath": "/usr/bin/google-chrome" } }
+  },
+  "bindings": {
+    "@hypit/seedream@1#seedream-5-lite": "fal.personal",
+    "@hypit/minimax-h3@1#minimax-h3": "fal.personal"
+  }
+}

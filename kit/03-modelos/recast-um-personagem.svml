@@ -1,0 +1,24 @@
+<?svml using="@hypit/markup@1"?>
+<!-- Uma versão de Recast (mensagem 4): foto de identidade de um personagem FICTÍCIO pelo GPT Image 2.5,
+     depois o MiniMax H3 Recast coloca esse personagem no clipe.
+     Precisa de pacotes de modelo do Hypit para GPT Image 2.5 e H3 Recast ligados ao fal (peça ao Claude para criar).
+     Troque as partes entre [colchetes] com o nome e a descrição do characters.json.
+     Os prompts ficam em inglês: os modelos respondem melhor assim. -->
+<svml>
+  <import as="text" from="@hypit/text@1"/>
+  <import as="media" from="@hypit/media@1"/>
+  <import as="gpt" from="[seu pacote gpt-image-2.5]@1"/>
+  <import as="recast" from="[seu pacote h3-recast]@1"/>
+
+  <!-- Entradas: o primeiro quadro do clipe e os primeiros 8 segundos do clipe. -->
+  <media:Image id="source-start" src="../references/meu-ugc-primeiro-quadro.png"/>
+  <media:Video id="source" src="../references/meu-ugc-8s.mp4"/>
+
+  <!-- Foto de identidade: troca a pessoa do primeiro quadro pelo personagem fictício, mantendo o resto. -->
+  <text:Value id="start-prompt">Edit this vertical selfie video frame. Replace the person with a distinct fictional adult aged 25-30: [name, description from characters.json]. Keep the source framing, head angle, gaze, expression, body pose, light, room and camera perspective. Authentic phone-camera UGC, realistic skin texture, no beauty filter. Keep the room completely unchanged. Vertical 9:16. No added text or watermark.</text:Value>
+  <gpt:Image id="start" prompt={start-prompt} aspect-ratio="9:16" resolution="2K"><gpt:Reference image={source-start}/></gpt:Image>
+
+  <!-- Recast: coloca o personagem no vídeo, mantendo movimento, câmera, tempo e áudio do original. -->
+  <text:Value id="instruction">Replace only the person in the source video with [name], the fictional adult in the reference photo: [description]. Match the reference face, hairstyle, outfit and accessories. Keep the original background, lighting, camera framing and movement, cuts, gesture timing, body performance, facial expressions, mouth movements and source audio. The reference photo supplies identity and wardrobe only. Do not add props, captions or other people.</text:Value>
+  <recast:ReferenceVideo id="remake" prompt={instruction} duration="8" resolution="1080P"><recast:Reference video={source}/><recast:Reference image={start.image}/></recast:ReferenceVideo>
+</svml>
