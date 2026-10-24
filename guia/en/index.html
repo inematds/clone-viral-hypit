@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clone a viral video with your face — Hypit in Claude Code, models on fal</title>
-<meta name="description" content="INEMA kit (in Portuguese) for remaking a short clip with your own face using Hypit inside Claude Code, with the models running on fal: ready-made messages, file templates, checklists and prices.">
+<meta name="description" content="INEMA kit (in Portuguese) for redoing a short clip with your own face using Hypit inside Claude Code, with the models running on fal: ready-made messages, file templates, checklists and prices.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/clone-viral-hypit/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/clone-viral-hypit/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/clone-viral-hypit/guia/es/">
@@ -138,7 +138,7 @@
     <div>
       <span class="chip">INEMA Kit · Hypit + Claude Code + fal</span>
       <h1>Clone a viral video with your <span class="amb">face</span></h1>
-      <p class="lead">One clip of yours and two photos become the same video starring you, in another language or with other characters. Claude shows the plan and the price before spending anything.</p>
+      <p class="lead">One clip of yours and two photos become the same video with you in it, in another language or with other characters. Claude shows the plan and the price before spending anything.</p>
       <div class="cta">
         <a class="btn" href="#guia">Start the guide</a>
         <a class="btn ghost" href="https://github.com/inematds/clone-viral-hypit" target="_blank" rel="noopener">View on GitHub</a>
@@ -150,7 +150,7 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">In short</span>
-  <p>This is a free INEMA kit, in Portuguese, with ready-made messages to paste into Claude Code, file templates, checklists and a price table. It teaches you to use Hypit, an open video tool, to remake a short clip with your own face, make a version in another language, or swap the person for fictional characters. It suits anyone in marketing or content creation who wants to test several versions of an ad without filming again. You need Claude Code, a fal account with a few dollars of credit, a clip of yours and two photos of your face.</p>
+  <p>This is a free INEMA kit (in Portuguese) with ready-made messages to paste into Claude Code, file templates, checklists and a price table. It teaches you to use Hypit, an open video tool, to redo a short clip with your own face, make a version in another language, or swap the person for fictional characters. It suits people who do marketing or create content and want to test several versions of an ad without filming again. You need Claude Code, a fal account with a few dollars of credit, a clip of yours and two photos of your face.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
@@ -159,8 +159,8 @@
   <p class="sub">Hypit plans and assembles the video on your computer. fal runs the image and video models. Claude Code talks to you and writes the files. This kit gathers what you need to tell it.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="Banner with the parts of the kit: installation, 4 messages, templates, checklists, prices and ad test" loading="lazy" width="1400" height="788" style="width:100%;height:auto;display:block"></figure>
   <div class="grid g3">
-    <div class="card"><h3>🧠 You ask in text</h3><p>Four ready-made messages, to paste into Claude Code. No commands to type.</p></div>
-    <div class="card"><h3>💵 Price before spending</h3><p>Every message ends with "Show me the plan and the price and don't build anything." Claude quotes the cost and stops.</p></div>
+    <div class="card"><h3>🧠 You ask in text</h3><p>Four ready-made messages to paste into Claude Code. No commands to type.</p></div>
+    <div class="card"><h3>💵 Price before spending</h3><p>Every message ends with "Show me the plan and the price and don't build anything." Claude estimates the cost and stops.</p></div>
     <div class="card"><h3>🧩 One base, many versions</h3><p>After the first one, a new face or a new language is just one more message, not a day of filming.</p></div>
   </div>
 </div></section>
@@ -168,15 +168,15 @@
 <section id="fluxo"><div class="wrap">
   <span class="chip">How it works</span>
   <h2>The 3 steps</h2>
-  <p class="sub">Install, remake with your face, check and make versions. At each one, Claude shows the plan and the price first.</p>
+  <p class="sub">Install, redo it with your face, check and make versions. In each one, Claude shows the plan and the price first.</p>
   <div class="flow">
     <span>1 · Install Hypit + fal</span><span class="arr">→</span>
-    <span>2 · Remake with your face</span><span class="arr">→</span>
+    <span>2 · Redo it with your face</span><span class="arr">→</span>
     <span>3 · Check, fix and make versions</span>
   </div>
   <div class="grid g3" style="margin-top:22px">
-    <div class="card"><h3>1. Install</h3><p>One message installs Hypit in the project only, connects fal by reading FAL_KEY from the environment and points to the Chrome you already have. About 6 minutes.</p></div>
-    <div class="card"><h3>2. Remake</h3><p>Hypit takes the first and last frame of the clip, puts your face in both and generates the 8 seconds between them. Images first, video after.</p></div>
+    <div class="card"><h3>1. Install</h3><p>One message installs Hypit just for the project, connects fal by reading FAL_KEY from the environment, and points to the Chrome you already have. About 6 minutes.</p></div>
+    <div class="card"><h3>2. Redo</h3><p>Hypit takes the first and last frame of the clip, puts your face in both, and generates the 8 seconds between them. Images first, video after.</p></div>
     <div class="card"><h3>3. Check and make versions</h3><p>Face, hands and text in the scene. Fix with premium models. Then: another language or fictional characters in the same clip.</p></div>
   </div>
 </div></section>
@@ -192,41 +192,46 @@
 <span class="k">export</span> FAL_KEY=<span class="s">"paste-your-key-here"</span>
 
 <span class="c"># check without showing the value</span>
-[ -n "$FAL_KEY" ] && echo "FAL_KEY loaded"</pre>
+[ -n "$FAL_KEY" ] && echo "FAL_KEY loaded"
+
+<span class="c"># Windows (PowerShell): saves it for your user</span>
+<span class="k">setx</span> FAL_KEY <span class="s">"paste-your-key-here"</span></pre>
       <p><strong>Never paste the key into the chat.</strong> Hypit reads it from your computer.</p></div>
-    <div class="card"><h3>A short clip of yours</h3><p>Preferably under 10 seconds. Yours, or one you have the right to remake.</p></div>
-    <div class="card"><h3>Two sharp photos of your face</h3><p>One facing the camera and one slightly turned. No sunglasses, no hand over the mouth, with good light.</p></div>
+    <div class="card"><h3>A short clip of yours</h3><p>8 to 10 seconds (the messages use the first 8 s). Yours, or one you have the right to redo.</p></div>
+    <div class="card"><h3>Two sharp photos of your face</h3><p>One facing the camera and one slightly from the side. No sunglasses, no hand over the mouth, with good light.</p></div>
   </div>
 </div></section>
 
 <section id="guia"><div class="wrap">
   <span class="chip">User guide · step by step</span>
   <h2>From clip to versions</h2>
-  <p class="sub">Paste each message into Claude Code, in the project folder. The full versions, with explanations, are in <a href="https://github.com/inematds/clone-viral-hypit/tree/main/kit" target="_blank" rel="noopener">kit/</a> (in Portuguese).</p>
+  <p class="sub">Paste each message into Claude Code, in the project folder. The full versions, with explanations, are in <a href="https://github.com/inematds/clone-viral-hypit/tree/main/kit" target="_blank" rel="noopener">kit/ (in Portuguese)</a>.</p>
 
   <div class="step"><div class="b">1</div><div>
     <h3>Set up the folder <span class="who">🧠 you</span></h3>
-    <p>An empty folder for the project, with the clip and the photos inside <code>references/</code>.</p>
+    <p>An empty folder for the project, with the clip and the photos inside <code>references/</code>. You don't need to pull the frames out of the clip: Claude extracts the first and last frame when you send the step 3 message.</p>
 <pre>meu-clone/
+├── characters.json      <span class="c"># only for step 7 (characters)</span>
 └── references/
-    ├── meu-clipe.mp4
-    ├── rosto-1.jpg
-    └── rosto-2.jpg</pre>
+    ├── meu-clipe.mp4    <span class="c"># the clip you are going to redo</span>
+    ├── rosto-1.jpg      <span class="c"># photo facing the camera</span>
+    ├── rosto-2.jpg      <span class="c"># photo slightly from the side</span>
+    └── meu-ugc.mp4      <span class="c"># only for step 7</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Install Hypit and connect fal <span class="who">🧠 you · ⚙️ Hypit</span></h3>
-    <p>Open Claude Code in that folder and paste the installation message. Common gotchas: the package is <code>@hypit/hypit</code>; the skill goes into the project only (<code>npx skills add hypit-ai/hypit</code>, without <code>-g</code>); <code>npm pkg set</code> needs <code>--json</code> to save <code>true</code> as a boolean.</p>
-<pre>Install Hypit in this folder. Install the Hypit skill from github.com/hypit-ai/hypit for this project only, and the hypit command through npm. Then connect fal so the images and clips run on fal: Hypit doesn't ship with fal, so write a small project Provider package in packages/provider-fal that reads my FAL_KEY from the environment and never saves the key to a file. FAL_KEY is already set. Point Hypit's page renderer to the Chrome I already have installed. Show me the plan first and then check that everything works.</pre>
+    <p>Open Claude Code in that folder and paste the install message. What usually happens: Claude installs the skill only in the project (<code>npx skills add hypit-ai/hypit</code>, without <code>-g</code>) and the <code>@hypit/hypit</code> package, and sometimes fixes a setting that came out wrong on its own. You just approve. If <code>/hypit</code> is not recognized afterwards, close and reopen Claude Code in the same folder.</p>
+<pre>Install Hypit in this folder. Install the Hypit skill from github.com/hypit-ai/hypit for this project only, and the hypit command through npm. Then connect fal so the images and clips run on fal: Hypit doesn't come with fal, so write a small project Provider package in packages/provider-fal that reads my FAL_KEY from the environment and never writes the key to a file. FAL_KEY is already set. Point Hypit's page renderer to the Chrome I already have installed. Show me the plan first and then check that everything works.</pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
-    <h3>Remake the clip with your face <span class="who">🧠 you · 🤖 fal</span></h3>
-    <p>First and last frame with your face, then the video between them. In two rounds, so you can check the images before paying for the video. About US$0.71 by the 10/21/2026 price table.</p>
-<pre><span class="k">/hypit</span> Remake the first 8 seconds of references/meu-clipe.mp4 with my face, using references/rosto-1.jpg and references/rosto-2.jpg. Take the first and last frame of the clip and put my face in both, keeping the same pose, the same room and the same light. Then make the 8-second clip between those two frames. Split it into two rounds, images first and then the clip, so I can check the images before paying for the video. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
+    <h3>Redo the clip with your face <span class="who">🧠 you · 🤖 fal</span></h3>
+    <p>First and last frame with your face, then the video between them. In two rounds, so you can check the images before paying for the video. If your clip is shorter than 8 s, replace "8 seconds" with the real duration. About US$0.71 by the 10/21/2026 price table.</p>
+<pre><span class="k">/hypit</span> Redo the first 8 seconds of references/meu-clipe.mp4 with my face, using references/rosto-1.jpg and references/rosto-2.jpg. Take the first and last frame of the clip and put my face in both, keeping the same pose, the same room and the same light. Then make the 8-second clip between those two frames. Split it into two rounds, images first and then the clip, so I can check the images before paying for the video. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
   </div></div>
 
-  <div class="callout"><strong>Why the last sentence is the most important.</strong> "Show me the plan and the price and don't build anything." turns the request into a quote: Claude reads, plans, calculates the cost on fal and stops. You check whether it understood the clip, whether the models and resolution are the ones you asked for, and whether the price fits. Only then do you answer "go ahead and build". If the price comes as an estimate, ask it to check on the fal pages.</div>
+  <div class="callout"><strong>Why the last sentence is the most important.</strong> "Show me the plan and the price and don't build anything." turns the request into a quote: Claude reads, plans, calculates the cost on fal and stops. You check whether it understood the clip, whether the models and resolution are the ones you asked for, and whether the price fits. Only then do you reply "go ahead and build". If the price comes as an estimate, ask it to confirm on the fal pages.</div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Check 3 things <span class="who">🧠 you</span></h3>
@@ -235,20 +240,20 @@
 
   <div class="step"><div class="b">5</div><div>
     <h3>Fix with premium models <span class="who">🧠 you · 🤖 fal</span></h3>
-    <p>A stronger image model, a middle frame and 1080p video. Same prompts, only the model changes. About US$2.</p>
-<pre><span class="k">/hypit</span> The face and the text in the scene look fake. Redo it with premium models: GPT Image 2.5 at maximum quality for three frames (start, middle and end), so the motion doesn't go off track, and MiniMax H3 Max at 1080p for two clips of about 4 seconds each. Keep all the prompts the same, changing only the model. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
+    <p>A stronger image model, a middle frame and video in 1080p. Same prompts, only the model changes. About US$2.</p>
+<pre><span class="k">/hypit</span> The face and the text in the scene look fake. Redo it with premium models: GPT Image 2.5 at maximum quality for three frames (start, middle and end), so the movement doesn't go off track, and MiniMax H3 Max at 1080p for two clips of about 4 seconds each. Keep all the prompts the same, changing only the model. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Make the version in another language <span class="who">🧠 you · 🤖 fal</span></h3>
-    <p>Translates and trims the speech, new voice, check with Whisper, lips synced and subtitles. If the voice gets a number or a rare word wrong, write it the way it is spoken and check again. About US$2.</p>
-<pre><span class="k">/hypit</span> Make a Japanese version of my premium clip. Translate the speech and trim it to fit in 8 seconds, make a new voice, run a speech check, sync the lips to the new voice and add subtitles. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
+    <p>Translates and trims the speech, new voice, check with Whisper, synced lips and subtitles. If the voice gets a number or a rare word wrong, write it the way it's spoken and check again. Use your own voice or a generic voice: cloning someone else's voice requires their permission. About US$2.</p>
+<pre><span class="k">/hypit</span> Make a Japanese version of my premium clip. Translate the speech and trim it to fit in 8 seconds, make a new voice, run a speech check, sync the lips with the new voice and add subtitles. <span class="s">Show me the plan and the price and don't build anything.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>One clip, several fictional people <span class="who">🧠 you · 🤖 fal</span></h3>
-    <p>With the kit's <code>characters.json</code> (made-up characters). If the safety filter blocks a photo (<code>content_policy_violation</code>), soften that character's description and rerun only that one.</p>
-<pre><span class="k">/hypit</span> I want an 8-second UGC clip remade with different characters, one version per character in characters.json. Each character gets an identity photo made by GPT Image 2.5, and then MiniMax H3 Recast puts that person into the clip at 1080p, keeping the movements, the camera and the timing. <span class="s">Show me the plan and the total price of all the versions and don't build anything.</span></pre>
+    <p>With the kit's <code>characters.json</code> (7 invented characters) in the root of the folder and the clip in <code>references/meu-ugc.mp4</code>. 7 versions cost about US$25.20. If the safety filter blocks a photo (<code>content_policy_violation</code>), soften that character's description and run only that one again.</p>
+<pre><span class="k">/hypit</span> I want the first 8 seconds of references/meu-ugc.mp4, a UGC clip, redone with different characters, one version per character in characters.json. Each character gets an identity photo made by GPT Image 2.5, and then MiniMax H3 Recast puts that person into the clip at 1080p, keeping the movements, the camera and the timing. <span class="s">Show me the plan and the total price of all versions and don't build anything.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">8</div><div>
@@ -259,7 +264,7 @@
   <h3 style="margin:34px 0 12px">The 3 mistakes that make everything look fake</h3>
   <div class="grid g3">
     <div class="card"><h3>Clip too long</h3><p>Stay under 10 seconds. Recast accepts 5 to 30 s, but short gets it right more often and costs less.</p></div>
-    <div class="card"><h3>Bad face photo</h3><p>No sunglasses, no hand over the mouth. One facing the camera, one turned, good light.</p></div>
+    <div class="card"><h3>Bad photo of the face</h3><p>No sunglasses, no hand over the mouth. One facing the camera, one from the side, good light.</p></div>
     <div class="card"><h3>Video before images</h3><p>Check the images (cents) before paying for the clip (dollars).</p></div>
   </div>
 </div></section>
@@ -272,20 +277,34 @@
     <thead><tr><th>What</th><th>Approximate cost</th><th>Source</th></tr></thead>
     <tbody>
       <tr><td>First version (Seedream 5 Lite + MiniMax H3 768p)</td><td>US$0.71</td><td>fal price table</td></tr>
-      <tr><td>Premium version (GPT Image 2.5 + H3 Max 1080p)</td><td>~US$2</td><td>fal price table</td></tr>
-      <tr><td>New language (voice, Whisper, lips, subtitles)</td><td>~US$2</td><td>fal price table</td></tr>
-      <tr><td>MiniMax H3 Recast 1080p</td><td>US$0.45/s → US$3.60 per 8 s clip; batch of 8 ≈ US$28.80</td><td><a href="https://fal.ai/models/minimax/h3-max/recast" target="_blank" rel="noopener">fal · Recast</a></td></tr>
+      <tr><td>Premium version (3 GPT Image 2.5 images + 2 H3 Max 1080p clips)</td><td>~US$2</td><td>fal price table</td></tr>
+      <tr><td>New language (voice, Whisper, lips, subtitles; Claude picks the models and shows them in the plan)</td><td>~US$2</td><td>fal price table</td></tr>
+      <tr><td>MiniMax H3 Recast 1080p</td><td>US$0.45/s → US$3.60 per 8 s clip; 7 versions (the characters.json) ≈ US$25.20; batch of 8 ≈ US$28.80</td><td><a href="https://fal.ai/models/minimax/h3-max/recast" target="_blank" rel="noopener">fal · Recast</a></td></tr>
       <tr><td>GPT Image 2.5 (editing)</td><td>~US$0.006 to 0.055 per image + ~US$0.01 per reference</td><td><a href="https://fal.ai/models/openai/gpt-image-2.5/sunburst/edit" target="_blank" rel="noopener">fal · GPT Image 2.5</a></td></tr>
       <tr><td>Higgsfield Genjutsu 1080p (comparison)</td><td>US$1.632/s → US$13.06 per clip; batch of 8 ≈ US$104.50</td><td><a href="https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/playground" target="_blank" rel="noopener">Higgsfield</a></td></tr>
     </tbody>
   </table></div>
-  <p class="mut" style="margin-top:14px">Recast and Genjutsu are different models; quality was not compared here, only the list price.</p>
+  <p class="mut" style="margin-top:14px">Recast and Genjutsu are different models; quality was not compared here, only the list price. The "premium" and "new language" rows are approximate sums of the models cited: the exact value is what Claude shows in the plan.</p>
+</div></section>
+
+<section id="termos"><div class="wrap">
+  <span class="chip">Terms</span>
+  <h2>Words you will meet along the way</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Skill and /hypit</h3><p>A skill is a package of instructions that Claude Code loads. <code>/hypit</code> at the start of the message makes it use the Hypit skill.</p></div>
+    <div class="card"><h3>Provider and runtime</h3><p>A provider is the package that connects Hypit to a service (here, fal). The <code>hypit.runtime.json</code> says which model runs on which service.</p></div>
+    <div class="card"><h3>SVML</h3><p>Hypit's composition language: a file with the inputs, the prompts and the model jobs. Claude writes it for you.</p></div>
+    <div class="card"><h3>Seedream, GPT Image, MiniMax H3</h3><p>AI models on fal: the first two make images; MiniMax H3 makes video. Recast is the H3 version that swaps the person in a video.</p></div>
+    <div class="card"><h3>Whisper and lip sync</h3><p>Whisper listens to audio and writes down what it heard (to check the new voice). Lip sync is syncing the mouth with the voice.</p></div>
+    <div class="card"><h3>UGC, 768p, 1080p</h3><p>UGC is video that looks like it was recorded on a phone by a customer. 768p and 1080p are the height of the video in pixels: bigger means sharper and more expensive.</p></div>
+  </div>
+  <p class="mut" style="margin-top:14px"><code>content_policy_violation</code> is the response from the model's safety filter when it refuses a description. Node.js is the program that runs Hypit; Claude checks whether you have it.</p>
 </div></section>
 
 <section id="etica"><div class="wrap">
   <span class="chip">Ethics and license</span>
   <h2>The rule before everything</h2>
-  <div class="callout etica"><strong>Use only your own face, or a face you have written permission to use. Use only clips of your own, or clips you have the right to remake.</strong> No celebrities, no coworkers without authorization, no videos made by others. The kit's characters are fictional. If the ad looks like a testimonial, say that it is AI-generated content.</div>
+  <div class="callout etica"><strong>Use only your own face, or a face you have written permission to use. Use only clips of yours, or clips you have the right to redo.</strong> No celebrities, no coworkers without authorization, no one else's video. The kit's characters are fictional. If the ad looks like a testimonial, disclose that it is AI-generated content.</div>
   <div class="grid g2">
     <div class="card"><h3>Hypit license (summary)</h3><ul>
       <li>Free to use in your work and your clients' work, including commercial.</li>
@@ -293,7 +312,7 @@
       <li>No selling or packaging Hypit (or a derivative).</li>
       <li>Keep the Hypit name and logo.</li>
     </ul><p style="margin-top:.6em">Read the full license in the <a href="https://github.com/hypit-ai/hypit" target="_blank" rel="noopener">Hypit repository</a>. That is why Hypit is not included in this kit.</p></div>
-    <div class="card"><h3>This kit</h3><p>MIT license: only the text, the file templates and the INEMA scripts. What you create with Hypit is yours; the model providers' terms still apply.</p></div>
+    <div class="card"><h3>This kit</h3><p>MIT license: only INEMA's text, file templates and scripts. What you create with Hypit is yours; the model providers' terms still apply.</p></div>
   </div>
 </div></section>
 
@@ -303,9 +322,9 @@
   <p class="sub">All in text, in Portuguese. Open it on GitHub or download the repository.</p>
 <pre class="kit">kit/
 ├── 00-COMECE-AQUI.md
-├── 01-instalacao/      what you need · installation message · safe FAL_KEY
+├── 01-instalacao/      what you need · install message · safe FAL_KEY
 ├── 02-mensagens/       the 4 messages for Claude
-├── 03-modelos/         characters.json · sample runtime · 2 .svml files
+├── 03-modelos/         characters.json · example runtime · 2 .svml files
 ├── 04-checklists/      check before fixing · 3 mistakes · test with 7 versions
 └── 05-precos-e-links.md</pre>
   <p class="mut">Explainer video for the kit: <a href="../../videos/">video page</a>.</p>

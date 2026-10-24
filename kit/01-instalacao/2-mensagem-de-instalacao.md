@@ -20,9 +20,11 @@ Abra o terminal **na pasta do projeto** (a que tem `references/`), inicie o Clau
 
 ## Pegadinhas comuns
 
-- **`npm pkg set` grava `true` como texto.** Quando o Claude marca uma opção booleana no `package.json`, o valor
-  pode sair como `"true"` (string). A correção é rodar de novo com `--json`
-  (`npm pkg set chave=true --json`). Se ele não perceber sozinho, mostre isto.
+- **`npm pkg set` grava `true` como texto.** Você não precisa fazer nada: se o Claude marcar uma opção no
+  `package.json` e ela sair como `"true"` (texto, entre aspas), ele costuma perceber e rodar de novo com `--json`.
+  Se a instalação reclamar dessa opção e ele não perceber, cole: "rode o npm pkg set de novo com --json".
+- **O `/hypit` não aparece.** Se, depois de instalar, o Claude não reconhecer `/hypit`, feche e abra o Claude Code
+  na mesma pasta para ele carregar a skill nova.
 - **Skill instalada no lugar errado.** Se aparecer `-g` no comando, peça para instalar só no projeto.
 - **Chave no arquivo.** Se o Claude sugerir colocar a chave num `.env` dentro do projeto ou no `hypit.runtime.json`,
   diga não: o runtime só guarda o **nome** da variável (`FAL_KEY`), nunca o valor.

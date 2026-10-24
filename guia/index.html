@@ -192,9 +192,12 @@
 <span class="k">export</span> FAL_KEY=<span class="s">"cole-aqui-a-sua-chave"</span>
 
 <span class="c"># confira sem mostrar o valor</span>
-[ -n "$FAL_KEY" ] && echo "FAL_KEY carregada"</pre>
+[ -n "$FAL_KEY" ] && echo "FAL_KEY carregada"
+
+<span class="c"># Windows (PowerShell): grava para o seu usuário</span>
+<span class="k">setx</span> FAL_KEY <span class="s">"cole-aqui-a-sua-chave"</span></pre>
       <p><strong>Nunca cole a chave no chat.</strong> O Hypit lê do seu computador.</p></div>
-    <div class="card"><h3>Um clipe seu, curto</h3><p>Menos de 10 segundos de preferência. Seu, ou com direito de refazer.</p></div>
+    <div class="card"><h3>Um clipe seu, curto</h3><p>De 8 a 10 segundos (as mensagens usam os primeiros 8 s). Seu, ou com direito de refazer.</p></div>
     <div class="card"><h3>Duas fotos nítidas do seu rosto</h3><p>Uma de frente e uma levemente de lado. Sem óculos escuros, sem mão na boca, com luz boa.</p></div>
   </div>
 </div></section>
@@ -206,23 +209,25 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Organize a pasta <span class="who">🧠 você</span></h3>
-    <p>Uma pasta vazia para o projeto, com o clipe e as fotos dentro de <code>references/</code>.</p>
+    <p>Uma pasta vazia para o projeto, com o clipe e as fotos dentro de <code>references/</code>. Você não precisa tirar os quadros do clipe: o Claude extrai o primeiro e o último quadro quando você manda a mensagem do passo 3.</p>
 <pre>meu-clone/
+├── characters.json      <span class="c"># só para o passo 7 (personagens)</span>
 └── references/
-    ├── meu-clipe.mp4
-    ├── rosto-1.jpg
-    └── rosto-2.jpg</pre>
+    ├── meu-clipe.mp4    <span class="c"># o clipe que você vai refazer</span>
+    ├── rosto-1.jpg      <span class="c"># foto de frente</span>
+    ├── rosto-2.jpg      <span class="c"># foto levemente de lado</span>
+    └── meu-ugc.mp4      <span class="c"># só para o passo 7</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Instale o Hypit e ligue o fal <span class="who">🧠 você · ⚙️ Hypit</span></h3>
-    <p>Abra o Claude Code nessa pasta e cole a mensagem de instalação. Pegadinhas comuns: o pacote é <code>@hypit/hypit</code>; a skill vai só no projeto (<code>npx skills add hypit-ai/hypit</code>, sem <code>-g</code>); <code>npm pkg set</code> precisa de <code>--json</code> para gravar <code>true</code> como booleano.</p>
+    <p>Abra o Claude Code nessa pasta e cole a mensagem de instalação. O que costuma acontecer: o Claude instala a skill só no projeto (<code>npx skills add hypit-ai/hypit</code>, sem <code>-g</code>) e o pacote <code>@hypit/hypit</code>, e às vezes corrige sozinho uma configuração que saiu errada. Você só aprova. Se depois o <code>/hypit</code> não for reconhecido, feche e abra o Claude Code na mesma pasta.</p>
 <pre>Instale o Hypit nesta pasta. Instale a skill do Hypit de github.com/hypit-ai/hypit só para este projeto, e o comando hypit pelo npm. Depois ligue o fal para as imagens e os clipes rodarem no fal: o Hypit não vem com o fal, então escreva um pequeno pacote Provider do projeto em packages/provider-fal que leia a minha FAL_KEY do ambiente e nunca grave a chave em arquivo. A FAL_KEY já está definida. Aponte o renderizador de páginas do Hypit para o Chrome que eu já tenho instalado. Me mostre o plano primeiro e depois confira se tudo funciona.</pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Refaça o clipe com o seu rosto <span class="who">🧠 você · 🤖 fal</span></h3>
-    <p>Primeiro e último quadro com o seu rosto, depois o vídeo entre eles. Em duas rodadas, para conferir as imagens antes de pagar o vídeo. Cerca de US$ 0,71 pela tabela de 21/10/2026.</p>
+    <p>Primeiro e último quadro com o seu rosto, depois o vídeo entre eles. Em duas rodadas, para conferir as imagens antes de pagar o vídeo. Se o seu clipe tiver menos de 8 s, troque "8 segundos" pela duração real. Cerca de US$ 0,71 pela tabela de 21/10/2026.</p>
 <pre><span class="k">/hypit</span> Refaça os primeiros 8 segundos de references/meu-clipe.mp4 com o meu rosto, usando references/rosto-1.jpg e references/rosto-2.jpg. Pegue o primeiro e o último quadro do clipe e coloque o meu rosto nos dois, mantendo a mesma pose, a mesma sala e a mesma luz. Depois faça o clipe de 8 segundos entre esses dois quadros. Divida em duas rodadas, primeiro as imagens e depois o clipe, para eu conferir as imagens antes de pagar o vídeo. <span class="s">Me mostre o plano e o preço e não construa nada.</span></pre>
   </div></div>
 
@@ -241,14 +246,14 @@
 
   <div class="step"><div class="b">6</div><div>
     <h3>Faça a versão em outra língua <span class="who">🧠 você · 🤖 fal</span></h3>
-    <p>Traduz e corta a fala, voz nova, conferência com o Whisper, lábios sincronizados e legenda. Se a voz errar um número ou palavra rara, escreva do jeito que se fala e confira de novo. Cerca de US$ 2.</p>
+    <p>Traduz e corta a fala, voz nova, conferência com o Whisper, lábios sincronizados e legenda. Se a voz errar um número ou palavra rara, escreva do jeito que se fala e confira de novo. Use a sua voz ou uma voz genérica: clonar a voz de outra pessoa exige a permissão dela. Cerca de US$ 2.</p>
 <pre><span class="k">/hypit</span> Faça uma versão em japonês do meu clipe premium. Traduza a fala e corte para caber em 8 segundos, faça uma voz nova, rode uma conferência de fala, sincronize os lábios com a voz nova e coloque legendas. <span class="s">Me mostre o plano e o preço e não construa nada.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>Um clipe, várias pessoas fictícias <span class="who">🧠 você · 🤖 fal</span></h3>
-    <p>Com o <code>characters.json</code> do kit (personagens inventados). Se o filtro de segurança bloquear uma foto (<code>content_policy_violation</code>), suavize a descrição daquele personagem e rode só ela de novo.</p>
-<pre><span class="k">/hypit</span> Quero um clipe de UGC de 8 segundos refeito com personagens diferentes, uma versão por personagem do characters.json. Cada personagem ganha uma foto de identidade feita pelo GPT Image 2.5, e depois o MiniMax H3 Recast coloca essa pessoa no clipe em 1080p, mantendo os movimentos, a câmera e o tempo. <span class="s">Me mostre o plano e o preço total de todas as versões e não construa nada.</span></pre>
+    <p>Com o <code>characters.json</code> do kit (7 personagens inventados) na raiz da pasta e o clipe em <code>references/meu-ugc.mp4</code>. 7 versões custam cerca de US$ 25,20. Se o filtro de segurança bloquear uma foto (<code>content_policy_violation</code>), suavize a descrição daquele personagem e rode só ela de novo.</p>
+<pre><span class="k">/hypit</span> Quero os primeiros 8 segundos de references/meu-ugc.mp4, um clipe de UGC, refeitos com personagens diferentes, uma versão por personagem do characters.json. Cada personagem ganha uma foto de identidade feita pelo GPT Image 2.5, e depois o MiniMax H3 Recast coloca essa pessoa no clipe em 1080p, mantendo os movimentos, a câmera e o tempo. <span class="s">Me mostre o plano e o preço total de todas as versões e não construa nada.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">8</div><div>
@@ -272,14 +277,28 @@
     <thead><tr><th>O quê</th><th>Custo aproximado</th><th>Fonte</th></tr></thead>
     <tbody>
       <tr><td>Primeira versão (Seedream 5 Lite + MiniMax H3 768p)</td><td>US$ 0,71</td><td>tabela do fal</td></tr>
-      <tr><td>Versão premium (GPT Image 2.5 + H3 Max 1080p)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
-      <tr><td>Nova língua (voz, Whisper, lábios, legenda)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
-      <tr><td>MiniMax H3 Recast 1080p</td><td>US$ 0,45/s → US$ 3,60 por clipe de 8 s; lote de 8 ≈ US$ 28,80</td><td><a href="https://fal.ai/models/minimax/h3-max/recast" target="_blank" rel="noopener">fal · Recast</a></td></tr>
+      <tr><td>Versão premium (3 imagens GPT Image 2.5 + 2 clipes H3 Max 1080p)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
+      <tr><td>Nova língua (voz, Whisper, lábios, legenda; o Claude escolhe os modelos e mostra no plano)</td><td>~US$ 2</td><td>tabela do fal</td></tr>
+      <tr><td>MiniMax H3 Recast 1080p</td><td>US$ 0,45/s → US$ 3,60 por clipe de 8 s; 7 versões (o characters.json) ≈ US$ 25,20; lote de 8 ≈ US$ 28,80</td><td><a href="https://fal.ai/models/minimax/h3-max/recast" target="_blank" rel="noopener">fal · Recast</a></td></tr>
       <tr><td>GPT Image 2.5 (edição)</td><td>~US$ 0,006 a 0,055 por imagem + ~US$ 0,01 por referência</td><td><a href="https://fal.ai/models/openai/gpt-image-2.5/sunburst/edit" target="_blank" rel="noopener">fal · GPT Image 2.5</a></td></tr>
       <tr><td>Higgsfield Genjutsu 1080p (comparação)</td><td>US$ 1,632/s → US$ 13,06 por clipe; lote de 8 ≈ US$ 104,50</td><td><a href="https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/playground" target="_blank" rel="noopener">Higgsfield</a></td></tr>
     </tbody>
   </table></div>
-  <p class="mut" style="margin-top:14px">Recast e Genjutsu são modelos diferentes; a qualidade não foi comparada aqui, só o preço de tabela.</p>
+  <p class="mut" style="margin-top:14px">Recast e Genjutsu são modelos diferentes; a qualidade não foi comparada aqui, só o preço de tabela. As linhas "premium" e "nova língua" são somas aproximadas dos modelos citados: o valor exato é o que o Claude mostra no plano.</p>
+</div></section>
+
+<section id="termos"><div class="wrap">
+  <span class="chip">Termos</span>
+  <h2>Palavras que aparecem no caminho</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Skill e /hypit</h3><p>Skill é um pacote de instruções que o Claude Code carrega. <code>/hypit</code> no início da mensagem faz ele usar a skill do Hypit.</p></div>
+    <div class="card"><h3>Provider e runtime</h3><p>Provider é o pacote que liga o Hypit a um serviço (aqui, o fal). O <code>hypit.runtime.json</code> diz qual modelo roda em qual serviço.</p></div>
+    <div class="card"><h3>SVML</h3><p>A linguagem de composição do Hypit: um arquivo com as entradas, os prompts e os trabalhos de modelo. O Claude escreve por você.</p></div>
+    <div class="card"><h3>Seedream, GPT Image, MiniMax H3</h3><p>Modelos de IA no fal: os dois primeiros fazem imagem; o MiniMax H3 faz vídeo. Recast é a versão do H3 que troca a pessoa de um vídeo.</p></div>
+    <div class="card"><h3>Whisper e lip sync</h3><p>Whisper escuta um áudio e escreve o que ouviu (para conferir a voz nova). Lip sync é sincronizar a boca com a voz.</p></div>
+    <div class="card"><h3>UGC, 768p, 1080p</h3><p>UGC é vídeo com cara de gravado no celular por um cliente. 768p e 1080p são a altura do vídeo em pixels: maior, mais nítido e mais caro.</p></div>
+  </div>
+  <p class="mut" style="margin-top:14px"><code>content_policy_violation</code> é a resposta do filtro de segurança do modelo quando ele recusa uma descrição. Node.js é o programa que roda o Hypit; o Claude confere se você tem.</p>
 </div></section>
 
 <section id="etica"><div class="wrap">

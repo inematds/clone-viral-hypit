@@ -10,7 +10,8 @@
   <import as="gpt" from="[seu pacote gpt-image-2.5]@1"/>
   <import as="recast" from="[seu pacote h3-recast]@1"/>
 
-  <!-- Entradas: o primeiro quadro do clipe e os primeiros 8 segundos do clipe. -->
+  <!-- Entradas: o primeiro quadro e os primeiros 8 segundos de references/meu-ugc.mp4.
+       O Claude corta o clipe e extrai o quadro e salva com estes nomes; você só põe o meu-ugc.mp4. -->
   <media:Image id="source-start" src="../references/meu-ugc-primeiro-quadro.png"/>
   <media:Video id="source" src="../references/meu-ugc-8s.mp4"/>
 

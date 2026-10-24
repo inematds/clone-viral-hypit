@@ -24,6 +24,23 @@ A chave do fal é dinheiro: quem tiver a chave gasta o seu crédito. Faça isto 
 
 5. Só então abra o Claude Code na pasta do projeto.
 
+## No Windows
+
+No PowerShell, grave a variável para o seu usuário (fica salva para os próximos terminais):
+
+```powershell
+setx FAL_KEY "cole-aqui-a-sua-chave"
+```
+
+Feche e abra o terminal e confira sem mostrar o valor:
+
+```powershell
+if ($env:FAL_KEY) { "FAL_KEY carregada" } else { "FAL_KEY não encontrada" }
+```
+
+Outro caminho: Painel de Controle › Sistema › Configurações avançadas › Variáveis de Ambiente › Nova (variável de usuário
+`FAL_KEY`).
+
 ## As regras
 
 - **Nunca cole a chave no chat**, nem no Claude. O Hypit lê a chave do seu computador; o Claude não precisa vê-la.

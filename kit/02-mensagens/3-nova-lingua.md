@@ -24,7 +24,8 @@ escreva por extenso ("dois mil e vinte e seis").
 
 ## Quanto custa (aproximado)
 
-Por volta de **US$ 2** pelos preços de tabela lidos em 21/10/2026.
+O Claude escolhe os modelos de voz e de sincronia labial disponíveis no fal e, se faltar algum pacote de modelo,
+pede para criar e ligar no `hypit.runtime.json` — confira isso no plano. Por volta de **US$ 2** pelos preços de tabela lidos em 21/10/2026.
 
 ## Sobre voz
 

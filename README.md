@@ -49,7 +49,7 @@ parar antes de gastar crédito.
 | Primeira versão com o seu rosto (Seedream 5 Lite + MiniMax H3 768p) | US$ 0,71 |
 | Versão premium (GPT Image 2.5 + MiniMax H3 Max 1080p) | ~US$ 2 |
 | Versão em outra língua | ~US$ 2 |
-| MiniMax H3 Recast 1080p (US$ 0,45/s) | US$ 3,60 por clipe de 8 s · lote de 8 ≈ US$ 28,80 |
+| MiniMax H3 Recast 1080p (US$ 0,45/s) | US$ 3,60 por clipe de 8 s · 7 versões ≈ US$ 25,20 · lote de 8 ≈ US$ 28,80 |
 | Higgsfield Genjutsu 1080p (US$ 1,632/s, comparação) | US$ 13,06 por clipe · lote de 8 ≈ US$ 104,50 |
 
 Preço muda: confira as páginas antes de gastar. Recast e Genjutsu são modelos diferentes; só o preço foi comparado.
@@ -67,8 +67,8 @@ Quem faz: 🧠 você no Claude Code · ⚙️ Hypit/script · 🤖 modelos no fa
 
 | # | Passo | O que fazer | Quem faz |
 |---|---|---|---|
-| 1 | Preparar | Criar a pasta do projeto com `references/meu-clipe.mp4`, `rosto-1.jpg`, `rosto-2.jpg` ([`kit/01-instalacao/1-o-que-precisa.md`](kit/01-instalacao/1-o-que-precisa.md)) | 🧠 |
-| 2 | Guardar a chave | `export FAL_KEY="..."` no `~/.zshrc`/`~/.bashrc`, abrir terminal novo; nunca no chat ([`3-chave-fal-segura.md`](kit/01-instalacao/3-chave-fal-segura.md)) | 🧠 |
+| 1 | Preparar | Criar a pasta do projeto com `references/meu-clipe.mp4`, `rosto-1.jpg`, `rosto-2.jpg` (para personagens: `references/meu-ugc.mp4` e `characters.json` na raiz); o Claude extrai os quadros ([`kit/01-instalacao/1-o-que-precisa.md`](kit/01-instalacao/1-o-que-precisa.md)) | 🧠 |
+| 2 | Guardar a chave | `export FAL_KEY="..."` no `~/.zshrc`/`~/.bashrc` (Windows: `setx FAL_KEY "..."`), abrir terminal novo; nunca no chat ([`3-chave-fal-segura.md`](kit/01-instalacao/3-chave-fal-segura.md)) | 🧠 |
 | 3 | Instalar | Colar a mensagem de instalação no Claude Code ([`2-mensagem-de-instalacao.md`](kit/01-instalacao/2-mensagem-de-instalacao.md)); o Hypit é instalado com `npx skills add hypit-ai/hypit` (sem `-g`) e `@hypit/hypit` | 🧠 → ⚙️ |
 | 4 | Orçar o primeiro clipe | Colar a mensagem 1 ([`kit/02-mensagens/1-refazer-com-seu-rosto.md`](kit/02-mensagens/1-refazer-com-seu-rosto.md)); o Claude escreve o `.svml` e mostra plano e preço | 🧠 → ⚙️ |
 | 5 | Gerar as imagens | Dizer "pode construir as imagens"; os 2 quadros com o seu rosto saem do fal | 🤖 |

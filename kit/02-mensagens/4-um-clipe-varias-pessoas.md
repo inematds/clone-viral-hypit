@@ -2,10 +2,11 @@
 
 UGC é aquele vídeo com cara de "gravado no celular por um cliente": selfie, fala direta, cenário de casa.
 
-Coloque na pasta: o clipe (**menos de 15 segundos, uma pessoa só**, seu ou com direito de refazer) e o arquivo
-`characters.json` (modelo em `../03-modelos/characters.json`, com personagens **fictícios**). Cole:
+Coloque na pasta: o clipe em `references/meu-ugc.mp4` (**uma pessoa só**, seu ou com direito de refazer; o Recast
+aceita até 15 s, mas perto de 8–10 s acerta mais) e o arquivo `characters.json` **na raiz da pasta** (modelo em
+`../03-modelos/characters.json`, com personagens **fictícios**). Cole:
 
-> /hypit Quero um clipe de UGC de 8 segundos refeito com personagens diferentes, uma versão por personagem do
+> /hypit Quero os primeiros 8 segundos de references/meu-ugc.mp4, um clipe de UGC, refeitos com personagens diferentes, uma versão por personagem do
 > characters.json. Cada personagem ganha uma foto de identidade feita pelo GPT Image 2.5, e depois o MiniMax H3
 > Recast coloca essa pessoa no clipe em 1080p, mantendo os movimentos, a câmera e o tempo.
 > Me mostre o plano e o preço total de todas as versões e não construa nada.

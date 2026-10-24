@@ -8,6 +8,8 @@ Na pasta `references/`: o clipe (`meu-clipe.mp4`) e as duas fotos (`rosto-1.jpg`
 > duas rodadas, primeiro as imagens e depois o clipe, para eu conferir as imagens antes de pagar o vídeo.
 > Me mostre o plano e o preço e não construa nada.
 
+Se o seu clipe tiver menos de 8 segundos, troque "8 segundos" pela duração real.
+
 ## Por que cada parte está aí
 
 - **`/hypit` no início:** faz o Claude usar a skill do Hypit, e não improvisar um script próprio.
@@ -21,7 +23,8 @@ Na pasta `references/`: o clipe (`meu-clipe.mp4`) e as duas fotos (`rosto-1.jpg`
 
 Um exemplo limpo está em `../03-modelos/refazer-com-seu-rosto.svml`. Em resumo:
 
-- **4 entradas:** as 2 fotos do rosto + o primeiro e o último quadro do clipe.
+- **4 entradas:** as 2 fotos do rosto + o primeiro e o último quadro do clipe (o Claude extrai os quadros do
+  `meu-clipe.mp4`; você não precisa fazer isso).
 - **2 trabalhos de imagem:** um por quadro. O prompt diz o que trocar e o que manter:
   "troque só o apresentador; mantenha a loja, a luz e a pose".
 - **1 trabalho de vídeo:** preenche os 8 segundos entre os dois quadros. Descreva o movimento por trechos
